@@ -182,13 +182,18 @@
   .list li::before { content: "▸"; color: var(--orange); font-weight: 900; }
   .list li b { color: var(--ink); }
 
-  /* Repertório: colunas estreitas — fonte menor e mais compacta pra não quebrar tanto */
+  /* Repertório: colunas estreitas — texto corrido (não flex) pra não quebrar em colunas */
   #repertorio .card { padding: 22px; }
   #repertorio .card h3 { font-size: .98rem; }
   #repertorio .card h3 .dur { font-size: .74rem; }
-  #repertorio .list { gap: 7px; }
-  #repertorio .list li { font-size: .82rem; line-height: 1.35; }
-  #repertorio .list li::before { font-size: .8rem; }
+  #repertorio .list { gap: 9px; }
+  #repertorio .list li {
+    display: block; position: relative; padding-left: 16px;
+    font-size: .84rem; line-height: 1.4;
+  }
+  #repertorio .list li::before {
+    position: absolute; left: 0; top: 0; font-size: .82rem;
+  }
 
   /* ---------- PRICING ---------- */
   .price-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
@@ -437,24 +442,24 @@
   <div class="wrap">
     <p class="eyebrow">O negócio</p>
     <h2 class="title display">Três pacotes pra vender</h2>
-    <p class="lede">Faixas de referência (mercado BR, 2026) — a maioria escolhe o do meio. Começa mais acessível pra formar portfólio e sobe conforme a agenda enche.</p>
+    <p class="lede">Faixas de referência (mercado BR, 2026) — a maioria escolhe o do meio. Banda ao vivo é serviço premium: uma banda infantil já conhecida cobra ~R$ 1.600 por 30 min, então não dá pra competir por baixo. Comece perto do piso pra formar portfólio e suba conforme o nome cresce.</p>
     <div class="grid g3" style="margin-top:34px">
       <div class="card">
         <span class="tier-tag" style="background:var(--panel-2);color:var(--turq);border:1.5px solid var(--turq)">Básico</span>
         <div class="price-head" style="margin-top:14px"><h3>Esquenta</h3><span class="dur">30 min</span></div>
-        <div class="price" style="color:var(--turq)">R$ 900–1.500</div>
+        <div class="price" style="color:var(--turq)">R$ 1.400–1.900</div>
         <p style="margin-top:10px">Banda (4), 1 número circense, som próprio, adesivos de lembrança.</p>
       </div>
       <div class="card feat-tier">
         <span class="tier-tag" style="background:var(--pink);color:#fff">⭐ Mais pedido</span>
         <div class="price-head" style="margin-top:14px"><h3>Showzão</h3><span class="dur">40 min</span></div>
-        <div class="price" style="color:var(--pink)">R$ 1.500–2.800</div>
+        <div class="price" style="color:var(--pink)">R$ 2.000–3.200</div>
         <p style="margin-top:10px">Tudo do básico + 2–3 números circenses, luz, backdrop da marca e momento do aniversariante.</p>
       </div>
       <div class="card">
         <span class="tier-tag" style="background:var(--panel-2);color:var(--purple);border:1.5px solid var(--purple)">Premium</span>
         <div class="price-head" style="margin-top:14px"><h3>Turnê</h3><span class="dur">1 hora</span></div>
-        <div class="price" style="color:var(--purple)">R$ 2.800+</div>
+        <div class="price" style="color:var(--purple)">R$ 3.500+</div>
         <p style="margin-top:10px"><b>Show estendido de 1h</b> + 3º número, mascote fantasiado, pintura facial, confete e meet &amp; greet com fotos.</p>
       </div>
     </div>
